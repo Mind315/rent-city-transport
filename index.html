@@ -6,9 +6,165 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="normalize.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,600;1,400&display=swap" rel="stylesheet">
   <title>Аренда городского транспорта</title>
 </head>
-<body>
+<body class="body">
+  
+    <div class="container">
+      <form action="#" class="form">
+        <div class="form__item">
+          <h2 class="form__title">Выберите транспорт</h2>
+          <ul class="form__list">
+            <li class="form__list-item">
+              <input
+                type="radio"
+                name="form__type-transport"
+                id="unicycle"
+                class="form__type-transport"
+                value="unicycle"
+              />
+              <label for="unicycle">Моноколесо</label>
+            </li>
+            <li class="form__list-item">
+              <input
+                type="radio"
+                name="form__type-transport"
+                id="segway"
+                class="form__type-transport"
+                value="segway"
+              />
+              <label for="segway">Сигвей</label>
+            </li>
+            <li class="form__list-item">
+              <input
+                type="radio"
+                name="form__type-transport"
+                id="hoverboard"
+                class="form__type-transport"
+                value="hoverboard"
+                checked="checked"
+              />
+              <label for="hoverboard">Ховерборд</label>
+            </li>
+            <li class="form__list-item">
+              <input
+                type="radio"
+                name="form__type-transport"
+                id="children bicycle"
+                class="form__type-transport"
+                value="children bicycle"
+              />
+              <label for="children bicycle">Детский велосипед</label>
+            </li>
+            <li class="form__list-item">
+              <input
+                type="radio"
+                name="form__type-transport"
+                id="bicycle"
+                class="form__type-transport"
+                value="bicycle"
+              />
+              <label for="bicycle">Велосипед</label>
+            </li>
+            <li class="form__list-item">
+              <input
+                type="radio"
+                name="form__type-transport"
+                id="electric scooter"
+                class="form__type-transport"
+                value="electric scooter"
+              />
+              <label for="electric scooter">Электро самокат</label>
+            </li>
+          </ul>
+        </div>
+        <div class="form__item">
+          <h2 class="form__title rent-time">Время аренды</h2>
+          <div class="slider">
+            <input
+              class="rent-time__value"
+              type="range"
+              name="time"
+              id="time"
+              step="1"
+              min="2"
+              max="96"
+              value="2"
+            />
+            <output class="rent-time__hours" id="volume" for="time">2</output>
+          </div>
+        </div>
+        <div class="form__item">
+          <h2 class="form__title">Опции</h2>
+          <div>
+            <div class="option__item">
+              <input
+                type="checkbox"
+                name="option1"
+                id="option1"
+                class="option"
+              />
+              <label for="option1" class="checkmark"></label>
+              <label for="option1">Подача далее 15 км от города</label>
+            </div>
+            <div class="option__item">
+              <input
+                type="checkbox"
+                name="option2"
+                id="option2"
+                class="option"
+              />
+              <label for="option2" class="checkmark"></label>
+              <label for="option2">Детское кресло с креплениями</label>
+            </div>
+            <div class="option__item">
+              <input
+                type="checkbox"
+                name="option3"
+                id="option3"
+                class="option"
+              />
+              <label for="option3" class="checkmark"></label>
+              <label for="option3">Комплект свадебных украшений</label>
+            </div>
+            <div class="option__item">
+              <input
+                type="checkbox"
+                name="option4"
+                id="option4"
+                class="option"
+              />
+              <label for="option4" class="checkmark"></label>
+              <label for="option4">Дополнительная страховка</label>
+            </div>
+          </div>
+        </div>
+      </form>
+      <form action="#" class="form form-order">
+        <div class="form__item">
+          <h2 class="form__title">Ваш заказ</h2>
+          <div class="order">
+            <span>Тариф:</span>
+            <output id="order_form__type-transport">—</output>
+          </div>
+          <div class="order">
+            <span>Срок аренды:</span>
+            <output id="order_time">—</output>
+          </div>
+          <div class="order">
+            <span>Дополнительно:</span>
+            <output id="order_option">—</output>
+          </div>
+        </div>
+        <div class="form__item">
+          <h2 class="form__title">Итоговая стоимость аренды:</h2>
+          <output class="total" id="total">0</output>
+        </div>
+      </form>
+    </div>
   
   <script src="main.js"></script>
 </body>
