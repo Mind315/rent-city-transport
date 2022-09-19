@@ -8,6 +8,7 @@ const orderTransport = document.getElementById('order_form__type-transport'); //
 const orderTime = document.getElementById('order_time'); //итоговое время
 const orderOption = document.getElementById('order_option'); //сумма за опции
 
+// события
 inputTime.addEventListener('input', updateTime);
 
 transportType.forEach((item) => {
@@ -21,7 +22,7 @@ optionType.forEach((option) => {
 // обновляем значение выбранного транспорта и обновляем итоговое значение
 function transportPriceUpdate(event) {
   let name = event.target.dataset.name;
-  console.log(name);
+
   currentState.transportType = name;
   updateTotalPrice();
   updateOrderTransport();
@@ -45,7 +46,6 @@ function updateTime(e) {
   resultTime.value = rangeValue;
   orderTime.value = `${rangeValue} ч`;
 
-  console.log(currentState.time);
   updateTotalPrice();
 }
 // обновление списка опций
@@ -97,3 +97,7 @@ let currentState = {
     return optionSumPrice;
   }
 };
+
+//при загрузке обновляем данные заказа
+updateTotalPrice();
+updateOrderTransport();
